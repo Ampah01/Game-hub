@@ -4,7 +4,49 @@
 
 
 .slick-slide > div {
-    margin: 15px 0;
-    width: 250px;
-
+    margin: 15px 15px;
+    width: 220px;
 }
+
+
+:root {
+    --scrollbar-track-color-light: #f1f1f1; /* Light mode track color */
+    --scrollbar-thumb-color-light: #888; /* Light mode thumb color */
+  }
+  
+  /* Dark mode */
+  :root.dark-theme {
+    --scrollbar-track-color-dark: #333; /* Dark mode track color */
+    --scrollbar-thumb-color-dark: #666; /* Dark mode thumb color */
+  }
+  
+  /* Scrollbar styles */
+  /* Track */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color-light); /* Default to light mode thumb color */
+    border-radius: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color-light); /* Default to light mode track color */
+  }
+  
+  /* Dark mode styles */
+  /* Switch to dark mode styles */
+  :root.dark-theme {
+    /* Thumb color */
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb-color-dark);
+    }
+  
+    /* Track color */
+    ::-webkit-scrollbar-track {
+      background-color: var(--scrollbar-track-color-dark);
+    }
+  }

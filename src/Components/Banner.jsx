@@ -1,12 +1,6 @@
-import React, { useEffect } from "react";
-
 function Banner({ gameBanner }) {
-  useEffect(() => {
-    console.log(gameBanner);
-  }, []);
-
   return (
-    <div className="relative">
+    <div className="relative mt-40 md:ml-20 lg:ml-0">
       <div className="absolute bottom-0 p-5 w-full bg-gradient-to-t from-slate-900 to-transparent">
         <h3 className="text-slate-50 font-bold text-[20px] md:text-[26px]">
           {gameBanner.name}
@@ -21,6 +15,6 @@ function Banner({ gameBanner }) {
       />
     </div>
   );
-};
+}
 
 export default Banner;
