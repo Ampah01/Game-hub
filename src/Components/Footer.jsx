@@ -28,7 +28,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full md:w-1/4 mb-6">
-          <h5 className="text-lg font-semibold text-white mb-4 text-zinc-800 dark:text-slate-50">Contact Us</h5>
+          <h5 className="text-lg font-semibold mb-4 text-zinc-800 dark:text-slate-50">Contact Us</h5>
+          
           <p>Email: support@gamehub.com</p>
           <p>Phone: +123 456 7890</p>
           <p>Address: 123 GameHub Street, Gamer City, GH 45678</p>

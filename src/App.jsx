@@ -6,6 +6,7 @@ import { ThemeContext } from "./Context/ThemeContext";
 
 function App() {
   const [theme, setTheme] = useState("light");
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     setTheme(
@@ -20,8 +21,8 @@ function App() {
           theme === "dark" ? " bg-slate-900 text-white" : null
         } min-h-[100vh]`}
       >
-        <Header />
-        <Home />
+        <Header onSearch={setSearchQuery}/>
+        <Home searchQuery={searchQuery} />
       </div>
     </ThemeContext.Provider>
   );

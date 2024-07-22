@@ -6,7 +6,7 @@ import Trending from "../Components/Trending.jsx";
 import GameListByGenre from "../Components/GameListByGenre.jsx";
 import Footer from "../Components/Footer.jsx";
 
-function Home() {
+function Home({ searchQuery }) {
   const [gameList, setGameList] = useState([]);
   const [selectedGenreName, setSelectedGenreName] = useState("Action");
   const [gameGenre, setGameGenre] = useState([]);
@@ -32,6 +32,7 @@ function Home() {
     try {
       const response = await GlobalApi.getGameByGenreId(id);
       setGameGenre(response.data.results);
+      console.log(response.data.results);
     } catch (error) {
       console.error(`Error fetching games for genre ID ${id}:`, error);
     }
@@ -53,6 +54,7 @@ function Home() {
             <GameListByGenre
               gameGenre={gameGenre}
               selectedGenre={selectedGenreName}
+              searchQuery={searchQuery}
             />
             <Footer />
           </div>
