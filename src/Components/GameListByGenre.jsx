@@ -21,22 +21,27 @@ function GameListByGenre({ gameGenre, selectedGenre, searchQuery }) {
       <h3 className="text-zinc-800 text-2xl font-bold dark:text-slate-50 mb-4">
         {selectedGenre} Games
       </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:w-full">
         {filteredGames.map((game, index) => (
           <div
             key={index}
             className={`bg-slate-300 dark:bg-slate-800 p-3 rounded-lg cursor-pointer transition-transform duration-300 ${
-              expandedGameIndex === index ? 'z-20 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4' : ''
+              expandedGameIndex === index
+                ? 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20'
+                : ''
             }`}
             onClick={() => handleGameClick(index)}
-            style={{ width: expandedGameIndex === index ? '40%' : 'auto' }}
+            style={{ 
+              width: expandedGameIndex === index ? '90vw' : 'auto',
+              maxWidth: expandedGameIndex === index ? '600px' : 'auto' 
+            }}
           >
             <img
               className="w-full h-48 object-cover rounded-lg mb-2"
               src={game.background_image}
               alt={game.name}
             />
-            <p className="text-lg font-semibold mb-1">
+            <p className="text-lg font-semibold mb-1 truncate">
               {game.name}
               <span className="text-[11px] bg-gray-400 text-slate-50 rounded-sm ml-3 p-1">
                 {game.metacritic}
